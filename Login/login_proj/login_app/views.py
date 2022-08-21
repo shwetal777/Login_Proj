@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, logout
 # Create your views here.
 
 def login(request):
+
     if request.method == 'POST':
         username= request.POST['username']
         password= request.POST['password']
@@ -15,13 +16,13 @@ def login(request):
         html2 = "<html><body>No such user</body></html>"
 
         if user is not None:
-            auth_login(request,user)
+            auth_login(request, user)
             return redirect('home')
         else:
             return HttpResponse(html2)
     else:
 
-        return render(request,'login.html')
+        return render(request, 'login.html')
 
 def signup(request):
 
@@ -40,14 +41,14 @@ def signup(request):
             # for instance in SignUp.objects.all():
             #     if (instance.username == username) or (instance.email==email):
             #         return HttpResponse(html1)
-            signup=User.objects.create_user(username=username,email=email,password=password1)
+            signup=User.objects.create_user(username=username, email=email, password=password1)
             signup.save()
 
             return redirect('login')
 
     else:
 
-        return render(request,'signup.html')
+        return render(request, 'signup.html')
 
 
 def user_logout(request):
