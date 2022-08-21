@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sign up |
+{% endblock title %}
+
+{% block content %}
+<main>
+    <form class="mb-3 mt-md-4" method="POST">
+        {% csrf_token %}
+        <h1 class="fw-bold mb-2 text-uppercase ">Sign Up</h1>
+        <p class=" mb-5">Please enter your details and signup!</p>
+        <div class="mb-3">
+            <label for="username" class="form-label ">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+        </div class="mb-3">
+        <div class="mb-3">
+            <label for="email" class="form-label ">Email</label>
+            <input type="text" class="form-control" name="email" placeholder="Enter Email" required>
+        </div class="mb-3">
+        <div class="mb-3">
+            <label for="password" class="form-label ">Password</label>
+            <input type="password" class="form-control" name="password1" placeholder="*******" required>
+        </div>
+        <div class="mb-3">
+            <label for="repeatPassword" class="form-label ">Repeat Password</label>
+            <input type="password" class="form-control" name="password2" placeholder="*******" required>
+        </div>
+        <label>
+        <input type="checkbox" checked="checked" name="remember" style="marginbottom: 15px"> Remember me
+        </label>
+        <p>By creating an account you agree to our <a href="#"
+        style="color:dodgerblue">Terms & Privacy</a><p>
+        <div>
+        <button class="btn btn-outline-dark" type="cancel"><a href="">Cancel</a></button>
+        <button formmethod="POST" class="btn btn-outline-dark" type="signup"><a href="">Sign Up</a></button>
+        </div>
+        </div>
+        </form>
+</main>
+{% endblock content %}
