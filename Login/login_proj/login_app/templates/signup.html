@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Sign up |
+    Sign up
 {% endblock title %}
 
 {% block content %}
 <main>
     <form class="mb-3 mt-md-4" method="POST">
         {% csrf_token %}
-        <h1 class="fw-bold mb-2 text-uppercase ">Sign Up</h1>
+        <h2 class="fw-bold mb-2 text-uppercase ">Sign Up</h2>
         <p class=" mb-5">Please enter your details and signup!</p>
         <div class="mb-3">
             <label for="username" class="form-label ">Username</label>
