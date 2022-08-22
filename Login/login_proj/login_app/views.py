@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import authenticate, logout
 
+from login_app.models import AccountsData
+
 # Create your views here.
 
 
@@ -60,4 +62,8 @@ def user_logout(request):
 
 
 def home(request):
-    return render(request, 'base.html')
+    data = AccountsData.objects.all()
+    context = {
+        'data' : data
+    }
+    return render(request, 'details.html', context)
