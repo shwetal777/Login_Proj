@@ -1,42 +1,38 @@
-{% extends 'base.html' %}
-{% block title %} Logged Out | {% endblock title %} 
-{%block content %}
-{% comment %} {% load staticfiles %} {% endcomment %}
+{% extends 'base.html' %} {% block title %} Logged Out | {% endblock title %}
+{%block content %} {% comment %} {% load staticfiles %} {% endcomment %}
 <h1>Account Details</h1>
-<div style="overflow-x:auto;">
-<ul>
-    <table class="table" >
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Account No.</th>
-            <th scope="col">Balance</th>
-            <th scope="col">Currency</th>
-            <th scope="col">City</th>
-          </tr>
-        </thead>
-        {% if data %}
-            {% for i in data %}
-            <tbody>
-              <tr>
-                <th scope="row">{{i.id}}</th>
-                <td>{{i.name}}</td>
-                <td>{{i.account_no}}</td>
-                <td>{{i.account_balance}}</td>
-                <td>{{i.currency}}</td>
-                <td>{{i.city}}</td>
-              </tr>
-            </tbody>
-    
-            {% endfor %}
-        {% else %}
-        <div class="col-md-12">
-            <p>No items Available</p>
-        </div>
-        {% endif %}
-    </table>
+<div style="overflow-x: auto">
+  <ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Account No.</th>
+          <th scope="col">Balance</th>
+          <th scope="col">Currency</th>
+          <th scope="col">City</th>
+        </tr>
+      </thead>
+      {% if data %} {% for i in data %}
+      <tbody>
+        <tr>
+          <th scope="row">{{i.id}}</th>
+          <td>{{i.name}}</td>
+          <td>{{i.account_no}}</td>
+          <td>{{i.account_balance}}</td>
+          <td>{{i.currency}}</td>
+          <td>{{i.city}}</td>
+        </tr>
+      </tbody>
 
-</ul>
+      {% endfor %} {% else %}
+      <div class="col-md-12">
+        <p>No items Available</p>
+      </div>
+      {% endif %}
+    </table>
+    
+  </ul>
 </div>
 {% endblock content %}
