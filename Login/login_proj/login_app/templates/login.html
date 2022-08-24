@@ -7,7 +7,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,6 +30,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <h2 class="fw-bold mb-2 text-uppercase">IBM</h2>
                   <p class="mb-5">Please enter your login and password!</p>
                   <div class="mb-3">
+                    {% for message in messages %}
+
+                    <div class="alert alert-success">
+                      <a class="close" href="" data-dismiss="alert">×</a>
+                      {{ message }}
+                    </div>
+
+                    {% endfor %}
                     <label for="username" class="form-label">Username</label>
                     <input
                       type="text"
@@ -76,14 +83,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     >
                   </p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
   </body>
-
 </html>

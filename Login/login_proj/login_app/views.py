@@ -23,7 +23,7 @@ def login(request):
             auth_login(request, user)
             return redirect('home')
         else:
-            message = "Log in failed!"
+            message = "Username / Password Incorrect!"
             messages.error(request, message)
             return redirect('login')
             # return HttpResponse(html2)
