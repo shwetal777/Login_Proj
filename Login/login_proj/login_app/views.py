@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import authenticate, logout
+from django.contrib import messages
 
 from login_app.models import AccountsData
 
@@ -10,7 +11,7 @@ from login_app.models import AccountsData
 
 
 def login(request):
-
+    logout(request)
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -22,14 +23,17 @@ def login(request):
             auth_login(request, user)
             return redirect('home')
         else:
-            return HttpResponse(html2)
+            message = "Log in failed!"
+            messages.error(request, message)
+            return redirect('login')
+            # return HttpResponse(html2)
     else:
 
         return render(request, 'login.html')
 
 
 def signup(request):
-
+    logout(request)
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
@@ -55,15 +59,25 @@ def signup(request):
 
         return render(request, 'signup.html')
 
-
+# @login_required(login_url='login/')
 def user_logout(request):
     logout(request)
     return redirect('login')
 
 
 def home(request):
-    data = AccountsData.objects.all()
-    context = {
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        User = request.user
+        data = AccountsData.objects.all()
+        context = {
         'data' : data
-    }
-    return render(request, 'details.html', context)
+        }
+        # profile = Profile.objects.get(user = User)
+        # parameters = {
+        #     'user':User,
+        #     'profile':profile,
+        # }
+    
+        return render(request, 'details.html', context)
