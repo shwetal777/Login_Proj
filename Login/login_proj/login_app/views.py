@@ -21,7 +21,7 @@ def login(request):
 
         if user is not None:
             auth_login(request, user)
-            return redirect('home')
+            return redirect('profile')
         else:
             message = "Username / Password Incorrect!"
             messages.error(request, message)
@@ -80,4 +80,7 @@ def home(request):
         #     'profile':profile,
         # }
     
-        return render(request, 'index.html', context)
+        return render(request, 'details.html', context)
+
+def profile(request):
+    return render(request, 'index.html')

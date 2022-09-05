@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="description" content="Start your development with ShwetalMore landing page.">
     <meta name="author" content="Devcrud">
-    <title>JohnDoe Landing page | Free Bootstrap 4.3.x landing page</title>
+    <title>ShwetalMore Profile</title>
     <!-- font icons -->
     
     {% block css %}
@@ -29,8 +29,8 @@
             </ul>  
             <div class="header-content">
                 <h4 class="header-subtitle" >Hello, I am</h4>
-                <h1 class="header-title">John Doe</h1>
-                <h6 class="header-mono" >Frond end Designer | Developer</h6>
+                <h1 class="header-title">Shwetal More</h1>
+                <h6 class="header-mono" >Data Scientist | Python Developer</h6>
                 <button class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i>Print Resume</button>
             </div>
         </div>
@@ -55,8 +55,8 @@
                 <ul class="navbar-nav brand">
                     <img src="{% static 'imgs/avatar.jpg' %}" alt="" class="brand-img">
                     <li class="brand-txt">
-                        <h5 class="brand-title">John Doe</h5>
-                        <div class="brand-subtitle">Web Designer | Developer</div>
+                        <h5 class="brand-title">Shwetal More</h5>
+                        <div class="brand-subtitle">Data Scientist | Python Developer</div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -66,9 +66,14 @@
                     <li class="nav-item">
                         <a href="#blog" class="nav-link">Blog</a>
                     </li>
-                    <li class="nav-item last-item">
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item last-item">
+                        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -86,9 +91,9 @@
                 <h3 class="font-weight-light">Personal Info</h3>
                 <span class="line mb-5"></span>
                 <ul class="mt40 info list-unstyled">
-                    <li><span>Birthdate</span> : 09/13/1996</li>
-                    <li><span>Email</span> : info@website.com</li>
-                    <li><span>Phone</span> : + (123) 456-7890</li>
+                    <li><span>Birthdate</span> : 07/06/1993</li>
+                    <li><span>Email</span> : shwetal-more@outlook.com</li>
+                    <li><span>Phone</span> : + (91) 75-8825-6946</li>
                     <li><span>Skype</span> : John_Doe </li>
                     <li><span>Address</span> :  12345 Fake ST NoWhere AB Country.</li>
                 </ul>
@@ -736,7 +741,7 @@
                                 <i class="ti-mobile icon-md"></i>
                             </div>
                             <div class="col-10 ">
-                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+ (123) 456-789</span></h6>
+                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+ (91) 75-8825-6946</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -744,7 +749,7 @@
                                 <i class="ti-map-alt icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Address :<br> <span class="text-muted">12345 Fake ST NoWhere AB Country.</span></h6>
+                                <h6 class="d-inline">Address :<br> <span class="text-muted">Pune, INDIA.</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -752,7 +757,7 @@
                                 <i class="ti-envelope icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Email :<br> <span class="text-muted">info@website.com</span></h6>
+                                <h6 class="d-inline">Email :<br> <span class="text-muted">shwetal-more@outlook.com.com</span></h6>
                             </div>
                         </div>
                         <ul class="social-icons pt-4">
