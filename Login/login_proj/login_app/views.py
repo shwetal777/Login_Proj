@@ -80,4 +80,4 @@ def home(request):
         #     'profile':profile,
         # }
     
-        return render(request, 'details.html', context)
+        return render(request, 'index.html', context)
