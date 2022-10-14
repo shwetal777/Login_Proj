@@ -11737,3 +11737,14 @@ body{
   background-color: hsla(352,76%,62%,.8);
   background-color: hsla(var(--cd-color-3-h),var(--cd-color-3-s),var(--cd-color-3-l),0.8);
 }
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+#image {
+  height: 100vh;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}

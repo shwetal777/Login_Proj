@@ -150,21 +150,42 @@ function initMap() {
 }
 
 //Check to see if the window is top if not then display button
-$(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('#toTopBtn').fadeIn();
-    }
-    else {
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 100) {
+    $('#toTopBtn').fadeIn();
+  }
+  else {
       $('#toTopBtn').fadeOut();
-    }
-  });
-
-  //Click event to scroll to top
-  $('#toTopBtn').click(function() {
-    $("html, body").animate({
-      scrollTop: 0
-    }, 1500);
-    return false;
-  });
+  }
 });
+
+//Click event to scroll to top
+$('#toTopBtn').click(function() {
+  $("html, body").animate({
+    scrollTop: 0
+  }, 1500);
+  return false;
+});
+
+fetch("https://api.unsplash.com/search/photos?query=philippines&client_id=2BHRf_91BeuRTt7CDCE-_eA3l95wlZLWlyog-KQ2c2Y")
+    .then(
+        function(response){
+            
+            
+            if(response.status !== 200){
+                console.log("There was a problem. Status code: " + response.status);
+                return;
+            }
+
+            response.json().then(
+                function(data){
+                    document.getElementById("image").style.background = 'url(' + data["results"][0]["urls"]["regular"]+')';
+                }
+            )
+        }
+    )
+    .catch(
+        function(err){
+            console.log(err+'404');
+        }
+        )
