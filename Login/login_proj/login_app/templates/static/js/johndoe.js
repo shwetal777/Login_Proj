@@ -167,7 +167,7 @@ $('#toTopBtn').click(function() {
   return false;
 });
 
-fetch("https://api.unsplash.com/search/photos/?query=canada&client_id=2BHRf_91BeuRTt7CDCE-_eA3l95wlZLWlyog-KQ2c2Y")
+fetch("https://api.unsplash.com/search/photos/?query=technology&client_id=2BHRf_91BeuRTt7CDCE-_eA3l95wlZLWlyog-KQ2c2Y")
     .then(
         function(response){
             
