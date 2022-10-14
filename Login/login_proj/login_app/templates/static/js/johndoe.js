@@ -1,11 +1,11 @@
 /*!
 =========================================================
-* JohnDoe Landing page
+* ShwetalMore Landing page
 =========================================================
 
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
+* Copyright: 2022 ShwetalMore
+* Licensed: Shwetal More
+* Coded by ShwetalMore
 
 =========================================================
 
@@ -148,3 +148,23 @@ function initMap() {
       ]
     });
 }
+
+//Check to see if the window is top if not then display button
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('#toTopBtn').fadeIn();
+    }
+    else {
+      $('#toTopBtn').fadeOut();
+    }
+  });
+
+  //Click event to scroll to top
+  $('#toTopBtn').click(function() {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 1500);
+    return false;
+  });
+});

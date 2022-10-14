@@ -84,3 +84,6 @@ def home(request):
 
 def profile(request):
     return render(request, 'index.html')
+
+def components(request):
+    return render(request, 'components.html')
