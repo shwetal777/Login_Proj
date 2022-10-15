@@ -45,7 +45,7 @@
                 <h4 class="header-subtitle" >Hello, I am</h4>
                 <h1 class="header-title">Shwetal More</h1>
                 <h6 class="header-mono" >Data Scientist | Python Developer</h6>
-                <button class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i>Print Resume</button>
+                <button onclick="window.print()" class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i>Print Resume</button>
             </div>
         </div>
     </header>
@@ -103,7 +103,9 @@
                     Extraction and Manipulation using Python and SQL Technologies. He Worked 
                     on various projects with Python, Machine Learning and Automation.
                     </p>
-                <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
+                    <form method="get" action="{% static 'docs/Shwetal_IBM_CV.pdf' %}">
+                        <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</button>
+                    </form>
             </div>
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Personal Info</h3>
@@ -720,6 +722,7 @@
             
         </div>
     </div>
+    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out"></a>
     <footer class="footer py-3">
         <div class="container">
             <p class="small mb-0 text-light">
@@ -744,6 +747,5 @@
     <!-- JohnDoe js -->
     <script src="{% static 'js/johndoe.js' %}"></script>
 
-    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out"></a>
 </body>
 </html>
