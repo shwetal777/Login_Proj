@@ -86,4 +86,5 @@ def profile(request):
     return render(request, 'index.html')
 
 def components(request):
-    return render(request, 'components.html')
+    # return render(request, 'components.html')
+    return HttpResponse("<h1>Page Is Under Development</h1>")
