@@ -672,15 +672,16 @@
                 <div class="col-lg-7">
                     <div class="contact-form-card">
                         <h4 class="contact-title">Send a message</h4>
-                        <form action="">
+                        <form action="" method="POST">
+                            {% csrf_token %}
                             <div class="form-group">
-                                <input  class="form-control" type="text" placeholder="Name *" required>
+                                <input  name="name" class="form-control" type="text" placeholder="Name *" required>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email *" required>
+                                <input name="email" class="form-control" type="email" placeholder="Email *" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id=" placeholder="Message *" rows="7" required></textarea>
+                                <textarea name="desc" class="form-control" id=" placeholder="Message *" rows="7" required></textarea>
                             </div>
                             <div class="form-group ">
                                 <button type="submit" class="form-control btn btn-primary" >Send Message</button>
