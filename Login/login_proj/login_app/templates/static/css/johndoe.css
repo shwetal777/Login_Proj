@@ -11694,6 +11694,7 @@ body{
 }
 
 #toTopBtn {
+  scroll-behavior: smooth;
   position: fixed;
   bottom: 16px;
   right:32px;
@@ -11748,3 +11749,4 @@ body{
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
+// how to make website responsive using css?
