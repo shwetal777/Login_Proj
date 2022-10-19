@@ -51,6 +51,13 @@
     </header>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
         <div class="container">
+            <div class="navbar-nav brand">
+                <img src="{% static 'imgs/avatar.jpg' %}" alt="" class="brand-img mobile">
+                <li class="brand-txt">
+                    <h5 class="brand-title d-lg-none">Shwetal More</h5>
+                    <div class="brand-subtitle d-lg-none">Data Scientist | Python Developer</div>
+                </li>
+            </div>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,10 +74,10 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav brand">
-                    <img src="{% static 'imgs/avatar.jpg' %}" alt="" class="brand-img">
+                    <img src="{% static 'imgs/avatar.jpg' %}" alt="" class="brand-img desktop">
                     <li class="brand-txt">
-                        <h5 class="brand-title">Shwetal More</h5>
-                        <div class="brand-subtitle">Data Scientist | Python Developer</div>
+                        <h5 class="brand-title d-none d-lg-block">Shwetal More</h5>
+                        <div class="brand-subtitle d-none d-lg-block">Data Scientist | Python Developer</div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">

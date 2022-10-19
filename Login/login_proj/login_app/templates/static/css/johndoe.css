@@ -11449,12 +11449,26 @@ pre .code {
   font-size: 13px;
   color: #888;
 }
+/* when screen is less than 600px wide
+     show mobile version and hide desktop */
+@media (max-width: 600px) {
+  .brand .mobile {
+      display: block;
+    }
 
-@media (max-width: 991.98px) {
+  .brand .desktop {
+      display: none;
+    }
+  }
+
+/* @media (max-width: 991.98px) {
+  .navbar .brand {
+    display: block;
+  }
   .navbar .brand {
     display: none;
   }
-}
+} */
 
 .navbar.affix .brand-txt {
   bottom: 0;
