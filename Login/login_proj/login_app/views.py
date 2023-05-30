@@ -1,3 +1,8 @@
+# rest framework imports
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
+################################################
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
